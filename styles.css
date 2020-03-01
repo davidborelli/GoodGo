@@ -1,0 +1,68 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  height: 100vh;
+  background: url(https://images.unsplash.com/photo-1581091973470-023528f664f1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=889&q=80%20889w)
+    center/100%;
+}
+
+h1 {
+  display: flex;
+  position: relative;
+  padding: 0 0.125em;
+  transform-style: preserve-3d;
+  font-size: 15rem;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #fff;
+}
+
+h1::after {
+  position: absolute;
+  top: 45%;
+  right: 0;
+  width: 100vw;
+  height: 2rem;
+  border-radius: 0 50px 50px 0;
+  background: crimson;
+  content: "";
+  animation: slide 3s ease-out 0.4s backwards;
+}
+
+.letter {
+  white-space: pre;
+  transform: rotatey(2deg);
+  animation: goDown 1s backwards;
+}
+
+.rev {
+  transform: rotatey(-2deg);
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes goDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-1000px);
+  }
+  50% {
+    opacity: 0.7;
+    transform: translateY(0);
+  }
+  70% {
+    opacity: 1;
+    transform: translateY(-10%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
